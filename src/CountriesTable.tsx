@@ -1,5 +1,6 @@
 import {Restcountry} from "./typegen/restcountries";
 import React, {useState} from "react";
+import {Select} from "./Select";
 
 type Sorting = "name" | "population" | "area";
 
@@ -56,15 +57,5 @@ function CountryRow({country}: { country: Restcountry }): React.ReactElement {
       <td style={{textAlign: "right"}}>{country.area ? Math.round((country.area / (1.5 * 1.5))) : ""}</td>
       <td style={{textAlign: "right"}}>{(country.population / 1000000).toFixed(1)}</td>
     </tr>
-  );
-}
-
-function Select<T extends string>({id, options, onChange}: { id: string, options: T[], onChange: (newValue: T) => void }): React.ReactElement {
-  return (
-    <select id={id} onChange={(event => onChange(event.target.value as unknown as T))}>
-      {options.map(option => (
-        <option key={option} value={option}>{option}</option>
-      ))}
-    </select>
   );
 }
