@@ -54,10 +54,24 @@
         "type": "string"
       },
       "area": {
-        "type": "number"
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ]
       },
       "gini": {
-        "type": "number"
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ]
       },
       "timezones": {
         "type": "array",
@@ -75,7 +89,14 @@
         "type": "string"
       },
       "numericCode": {
-        "type": "string"
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
       },
       "currencies": {
         "type": "array",
@@ -83,13 +104,34 @@
           "type": "object",
           "properties": {
             "code": {
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "name": {
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "symbol": {
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             }
           },
           "required": []
@@ -101,7 +143,14 @@
           "type": "object",
           "properties": {
             "iso639_1": {
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "iso639_2": {
               "type": "string"
@@ -121,44 +170,16 @@
         }
       },
       "translations": {
-        "type": "object",
-        "properties": {
-          "de": {
-            "type": "string"
-          },
-          "es": {
-            "type": "string"
-          },
-          "fr": {
-            "type": "string"
-          },
-          "ja": {
-            "type": "string"
-          },
-          "it": {
-            "type": "string"
-          },
-          "br": {
-            "type": "string"
-          },
-          "pt": {
-            "type": "string"
-          },
-          "nl": {
-            "type": "string"
-          },
-          "hr": {
-            "type": "string"
-          },
-          "fa": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "br",
-          "pt",
-          "fa"
-        ]
+        "additionalProperties": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
       },
       "flag": {
         "type": "string"
@@ -196,7 +217,14 @@
         }
       },
       "cioc": {
-        "type": "string"
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
       }
     },
     "required": [

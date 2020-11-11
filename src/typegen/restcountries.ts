@@ -42,18 +42,7 @@ export interface Language {
   nativeName: string;
 }
 
-export interface Translations {
-  de?: string;
-  es?: string;
-  fr?: string;
-  ja?: string;
-  it?: string;
-  br: string;
-  pt: string;
-  nl?: string;
-  hr?: string;
-  fa: string;
-}
+export type Translations = { [key: string]: string };
 
 export interface RegionalBloc {
   acronym: string;
