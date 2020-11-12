@@ -6,7 +6,7 @@ import {CountriesTable} from "./CountriesTable";
 import {CountryStats} from "./CountryStats";
 import {Languages} from "./Languages";
 
-function App() {
+export function App() {
   const countries = useFetch<Restcountries>('https://restcountries.eu/rest/v2/all', RestcountriesSchema);
 
   if (!countries) {
@@ -25,8 +25,3 @@ function App() {
     </main>
   );
 }
-
-// List languages with the countries that speak it in a table
-// - Show columns: Language, Countries[], Population
-
-export default App;
