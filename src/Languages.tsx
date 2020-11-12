@@ -1,9 +1,9 @@
-import {Restcountry} from "./typegen/restcountries";
+import {Country} from "./typegen/restcountries";
 import React from "react";
 
 type LanguageStats = { countries: string[], population: number };
 
-export function Languages({countries}: { countries: Restcountry[] }): React.ReactElement {
+export function Languages({countries}: { countries: Country[] }): React.ReactElement {
   const languages = new Map<string, LanguageStats>();
   countries.forEach(country => {
     country.languages.forEach(countryLanguage => {

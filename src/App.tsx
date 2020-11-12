@@ -1,13 +1,13 @@
 import React from 'react';
 import {useFetch} from "./useFetch";
-import {Restcountries} from "./typegen/restcountries";
+import {Countries} from "./typegen/restcountries";
 import RestcountriesSchema from "./typegen/restcountries.json";
 import {CountriesTable} from "./CountriesTable";
 import {CountryStats} from "./CountryStats";
 import {Languages} from "./Languages";
 
 export function App() {
-  const countries = useFetch<Restcountries>('https://restcountries.eu/rest/v2/all', RestcountriesSchema);
+  const countries = useFetch<Countries>('https://restcountries.eu/rest/v2/all', RestcountriesSchema);
 
   if (!countries) {
     return <p>Loading...</p>;

@@ -1,10 +1,10 @@
-import {Restcountry} from "./typegen/restcountries";
+import {Country} from "./typegen/restcountries";
 import React, {useState} from "react";
 import {Select} from "./Select";
 
 type Sorting = "name" | "population" | "area";
 
-function sortCountries(countries: Restcountry[], sorting: Sorting): Restcountry[] {
+function sortCountries(countries: Country[], sorting: Sorting): Country[] {
   switch (sorting) {
     case "name":
       return countries.sort((a, b) => a.name > b.name ? 1 : -1);
@@ -15,7 +15,7 @@ function sortCountries(countries: Restcountry[], sorting: Sorting): Restcountry[
   }
 }
 
-export function CountriesTable({countries}: { countries: Restcountry[] }): React.ReactElement {
+export function CountriesTable({countries}: { countries: Country[] }): React.ReactElement {
   const [sorting, setSorting] = useState<Sorting>("name");
 
   const sortedCountries = sortCountries(countries, sorting);
@@ -49,7 +49,7 @@ export function CountriesTable({countries}: { countries: Restcountry[] }): React
   );
 }
 
-function CountryRow({country}: { country: Restcountry }): React.ReactElement {
+function CountryRow({country}: { country: Country }): React.ReactElement {
   return (
     <tr>
       <td>{country.name}</td>

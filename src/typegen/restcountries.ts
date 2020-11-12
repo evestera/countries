@@ -1,8 +1,8 @@
 // Generated with json_typegen from https://restcountries.eu/rest/v2/all
 
-export type Restcountries = Restcountry[];
+export type Countries = Country[];
 
-export interface Restcountry {
+export interface Country {
   name: string;
   topLevelDomain: string[];
   alpha2Code: string;

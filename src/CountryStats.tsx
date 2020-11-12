@@ -1,7 +1,7 @@
-import {Restcountry} from "./typegen/restcountries";
+import {Country} from "./typegen/restcountries";
 import React from "react";
 
-export function CountryStats({countries}: { countries: Restcountry[] }): React.ReactElement {
+export function CountryStats({countries}: { countries: Country[] }): React.ReactElement {
   const largestArea = countries.reduce((a, b) => (a.area || Number.MIN_VALUE) > (b.area || Number.MIN_VALUE) ? a : b);
   const smallestArea = countries.reduce((a, b) => (a.area || Number.MAX_VALUE) < (b.area || Number.MAX_VALUE) ? a : b);
   const populationSum = countries.reduce((acc, country) => acc + country.population, 0);
